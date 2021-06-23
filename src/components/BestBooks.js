@@ -18,8 +18,9 @@ export class BestBooks extends Component {
     axios
       .get(`http://localhost:8080/books?email=${this.state.userEmail}`)
       .then((response) => {
+        console.log(response.data)
         this.setState({
-            booksData: response.data[0].books,
+            booksData: response.data.books,
         });
       })
       .catch((error) => {
